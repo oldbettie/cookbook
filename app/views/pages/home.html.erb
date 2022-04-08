@@ -3,3 +3,7 @@
     <h1>COOKBOOK</h1>
     <h3>Coming Soon!</h3>
 </div>
+
+<% if @current_user.present? %>
+    <h2>Welcome back <%= @current_user.username %></h2>
+<% end %>

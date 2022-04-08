@@ -12,7 +12,11 @@
   <body>
     <div class="navigation">
       <%= link_to 'Home', root_path %>
-      <%= link_to 'Sign up', new_user_path %>
+      <% if @current_user.present? %>
+        <%= link_to 'Sign out', login_path, method: 'delete' %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_path %>
+      <% end %>
     </div>
     <%= yield %>
   </body>
