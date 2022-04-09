@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :check_for_owner, only: [:edit, :update, :destroy]
+
   def index
     @recipes = Recipe.all
   end
@@ -17,6 +19,7 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find params[:id]
   end
 
   private

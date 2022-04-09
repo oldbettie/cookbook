@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
         redirect_to login_path unless (@current_user.present? && @current_user.admin?)
     end
 
+    # \/ this may not work was as stack overflow solution
+    def check_for_owner
+        @current_recipe = Recipe.find(params[:id])
+        redirect_to recipe_path(params[:id]) unless (@current_user.present? && @current_user.username == @current_recipe.user.username)
+    end
+
 end
