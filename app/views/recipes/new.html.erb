@@ -1,2 +1,21 @@
-<h1>Recipes#new</h1>
-<p>Find me in app/views/recipes/new.html.erb</p>
+<h1>Create New Recipe</h1>
+<div class="form-content">
+    <%= form_for @recipe do |r| %>
+        <%= r.label :name %>
+        <%= r.text_field :name %>
+        <%= r.label :ingredients %>
+        <%= r.text_field :ingredients %>
+        <%= r.label :instructions %>
+        <%= r.text_field :instructions %>
+        <%= r.label :image %>
+        <%= r.url_field :image %>
+        <%= r.label :video %>
+        <%= r.url_field :video %>
+        <%= r.label :category %>
+        <%= r.text_field :category %> <!-- TODO -->
+        <%= r.label :region %>
+        <%= r.text_field :region %>
+
+        <%=r.submit%>
+    <% end %>
+</div>

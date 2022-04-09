@@ -94,3 +94,21 @@ a {
 	max-width: 75%;
 	border-radius: 10px;
 }
+
+//  form ---
+input {
+	width: 95%;
+	margin: 2px;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: bisque;
+}
+input[type="submit"] {
+	width: 20%;
+	margin-top: 5px;
+	margin-left: 100px;
+	background-color: white;
+}
+.form-content {
+	border-radius: 20px;
+}
