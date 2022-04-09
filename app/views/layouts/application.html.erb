@@ -7,20 +7,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Odia&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div class="navigation">
-      <%= link_to 'Home', root_path %>
-      <% if @current_user.present? %>
-        <% if @current_user.admin? %>
-          <%= link_to 'Admin', users_path %>
+      <div class="nav-btns">
+        <%= link_to 'COOKBOOK', root_path, class: 'btn' %>
+        <%= link_to 'todo', root_path, class: 'btn' %>
+        <%= link_to 'todo', root_path, class: 'btn' %>
+
+      </div>
+      <div class="session-btns">
+        <% if @current_user.present? %>
+          <% if @current_user.admin? %>
+          <%# TODO add link instead of welcome page to edit profile %>
+          <h3>Welcome back <%= @current_user.username %></h3>
+            <%= link_to 'Admin', users_path, class: 'btn'  %>
+          <% end %>
+          <%= link_to 'Sign out', login_path, method: 'delete', class: 'btn'  %>
+        <% else %>
+          <%= link_to 'Login', login_path, class: 'btn'  %>
+          <%= link_to 'Sign up', new_user_path, class: 'btn'  %>
         <% end %>
-        <%= link_to 'Sign out', login_path, method: 'delete' %>
-      <% else %>
-        <%= link_to 'Login', login_path %>
-        <%= link_to 'Sign up', new_user_path %>
-      <% end %>
+      </div>
     </div>
     <%= yield %>
   </body>
