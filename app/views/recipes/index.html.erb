@@ -2,7 +2,10 @@
 
 <% @recipes.each do |r| %>
     <div class="recipe-content">
-        <h2 class="recipe-name"><%= r.name%></h2>
-        <img src="<%= r.image %>" alt="<%=r.name%>" class="index-img">
+        <div class="grid-left">
+            <h2 class="recipe-name"><%= link_to r.name, r %></h2>
+            <p class="desc-content"><%= r.instructions %> </p>
+        </div>
+        <img src="<%=r.image%>" alt="<%=r.name%>" class="index-img">
     </div>
 <% end %>

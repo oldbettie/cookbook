@@ -8,22 +8,31 @@ body {
 	max-width: 950px;
 	margin: 0 auto;
 }
-
+a {
+	text-decoration: none;
+	background-color: bisque;
+	color: rgba(14, 14, 14, 0.845);
+	padding: 5px;
+	padding-bottom: 0px;
+	border-radius: 10px;
+}
 // navigation ------
 .navigation {
 	display: flex;
 	background-color: bisque;
 	height: 50px;
+	width: 100%;
+	justify-content: space-between;
 }
-.nav-btns {
-	width: 64%;
-}
+
 .nav-btns,
 .session-btns {
 	display: flex;
 	align-items: center;
 }
-
+.session-btns {
+	margin-right: 8px;
+}
 .btn {
 	display: flex;
 	align-items: center;
@@ -59,7 +68,29 @@ body {
 	align-items: right;
 	border-radius: 40px;
 }
-.recipe-name {
+.grid-left {
 	color: bisque;
-	margin: 10px 0px 0px 20px;
+	margin: 20px 0px 0px 20px;
+}
+.desc-content {
+	margin-top: 10px;
+}
+
+// recipe show -----
+
+.show-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	background-color: rgb(59, 59, 59);
+	min-height: 91.5vh;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	color: bisque;
+}
+.img-show {
+	max-width: 75%;
+	border-radius: 10px;
 }

@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'recipes/index'
-  get 'recipes/show'
-  get 'recipes/new'
-  get 'recipes/edit'
+
   root :to => 'pages#home'
 
   resources :users, only: [:new, :create, :index]
