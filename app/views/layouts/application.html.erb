@@ -13,8 +13,12 @@
     <div class="navigation">
       <%= link_to 'Home', root_path %>
       <% if @current_user.present? %>
+        <% if @current_user.admin? %>
+          <%= link_to 'Admin', users_path %>
+        <% end %>
         <%= link_to 'Sign out', login_path, method: 'delete' %>
       <% else %>
+        <%= link_to 'Login', login_path %>
         <%= link_to 'Sign up', new_user_path %>
       <% end %>
     </div>
