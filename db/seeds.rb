@@ -9,3 +9,12 @@ User.create(email: 'spongebob@gmail.com', username: 'spongebob', password: 'chic
 User.create(email: 'patrick@gmail.com', username: 'patrick', password: 'chicken')
 
 puts ":total seeded users is #{ User.count }"
+
+
+# recipe seed data
+Recipe.destroy_all
+Recipe.create(name: 'meat pie', ingredients: 'groundbeef, gravy, pastry', instructions: 'bake at 220c for 120min', image: 'https://157212-453144-1-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/04/classic-meat-pies-1-1024x683@2x.jpg')
+Recipe.create(name: 'sausage roll', ingredients: 'sausages, pastry', instructions: 'bake at 220c for 120min', image: 'https://img.taste.com.au/kv8NEC44/w720-h480-cfill-q80/taste/2016/11/easy-sausage-rolls-28532-1.jpeg')
+Recipe.create(name: 'salad', ingredients: 'rabit food, salad dressing', instructions: 'slap it in a bowl and eat like a rabbit', image: 'https://cdn.loveandlemons.com/wp-content/uploads/2021/04/green-salad-1.jpg')
+
+puts ":total seeded recipes is #{ Recipe.count }"

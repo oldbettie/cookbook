@@ -44,3 +44,22 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+
+// recipes index ----
+.recipe-content {
+	background-color: rgb(59, 59, 59);
+	border-radius: 20px;
+	margin-bottom: 15px;
+	display: grid;
+	grid-template-columns: 8fr 5fr;
+}
+.index-img {
+	padding: 20px;
+	max-width: 80%;
+	align-items: right;
+	border-radius: 40px;
+}
+.recipe-name {
+	color: bisque;
+	margin: 10px 0px 0px 20px;
+}

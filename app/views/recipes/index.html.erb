@@ -1,0 +1,8 @@
+<h1>All recipes</h1>
+
+<% @recipes.each do |r| %>
+    <div class="recipe-content">
+        <h2 class="recipe-name"><%= r.name%></h2>
+        <img src="<%= r.image %>" alt="<%=r.name%>" class="index-img">
+    </div>
+<% end %>
