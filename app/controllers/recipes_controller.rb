@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :check_for_owner, only: [:edit, :update, :destroy]
+  before_action :check_for_owner_recipe, only: [:edit, :update, :destroy]
 
   def index
     @recipes = Recipe.all
@@ -13,13 +13,21 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
   def create
-    recipe = Recipe.create recipe_params
-    @current_user.recipe << recipe
-    redirect_to recipe
+    @current_user.recipes.create recipe_params
+    redirect_to recipes_path
   end
 
   def edit
     @recipe = Recipe.find params[:id]
+  end
+  def update
+
+  end
+
+  def destroy
+    recipe = Recipe.find params[:id]
+    recipe.destroy
+    redirect_to recipes_path
   end
 
   private
