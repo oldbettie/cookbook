@@ -8,14 +8,6 @@ body {
 	max-width: 950px;
 	margin: 0 auto;
 }
-a {
-	text-decoration: none;
-	background-color: bisque;
-	color: rgba(14, 14, 14, 0.845);
-	padding: 5px;
-	padding-bottom: 0px;
-	border-radius: 10px;
-}
 // navigation ------
 .navigation {
 	display: flex;
@@ -43,6 +35,22 @@ a {
 	padding-bottom: 4px;
 	margin-left: 8px;
 	border-radius: 8px;
+}
+// owner nav
+.owner-nav {
+	display: flex;
+	background-color: bisque;
+	height: 50px;
+	width: 100%;
+	justify-content: right;
+}
+a {
+	text-decoration: none;
+	background-color: bisque;
+	color: rgba(14, 14, 14, 0.845);
+	padding: 5px;
+	padding-bottom: 0px;
+	border-radius: 10px;
 }
 
 // main content container

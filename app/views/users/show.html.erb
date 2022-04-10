@@ -1,0 +1,9 @@
+<% if @current_user == @user %>
+    <div class="owner-nav nav-btns">
+        <%= link_to 'Edit', edit_user_path(@user), class: 'btn sesions btns' %>
+        <%= link_to 'Delete', root_path, method: 'delete', data: {confirm: 'are you sure you wish to leave us?'}, class: 'btn session-btns' %>
+    </div>
+<% end %>
+
+
+<h1><%= @user.username %></h1>
