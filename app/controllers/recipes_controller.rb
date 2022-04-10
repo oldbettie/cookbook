@@ -15,13 +15,18 @@ class RecipesController < ApplicationController
   def create
     @current_user.recipes.create recipe_params
     redirect_to recipes_path
+
+    # mixtape = Mixtape.create mixtape_params
+    # @current_user.mixtapes << mixtape
   end
 
   def edit
     @recipe = Recipe.find params[:id]
   end
   def update
-
+    recipe = Recipe.find params[:id]
+    recipe.update recipe_params
+    redirect_to recipe
   end
 
   def destroy
