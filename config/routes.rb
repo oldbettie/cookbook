@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :recipes
+  resources :comments
   
   get '/login' => 'session#new'
   post '/login' => 'session#create'

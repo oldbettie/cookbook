@@ -180,3 +180,20 @@ input[type="submit"] {
 .timestamp {
 	font-size: 13px;
 }
+.comment-container {
+	width: 75%;
+}
+.comment {
+	min-height: 100px;
+	background-color: bisque;
+	border-radius: 8px;
+	color: rgba(14, 14, 14, 0.845);
+	padding: 8px;
+}
+.comment-header {
+	display: flex;
+	justify-content: space-between;
+}
+.buttons-container {
+	display: flex;
+}

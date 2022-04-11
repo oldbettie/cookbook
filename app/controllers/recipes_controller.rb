@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find params[:id]
     ingredients = @recipe.ingredients
     @ingredients_as_arr = ingredients.split(', ', -1)
+    @comment = Comment.all
   end
 
   def new

@@ -2,7 +2,7 @@
     <div class="secondary-nav">
             <h1><%= @recipe.name %></h1>
     
-        <% if @current_user == @recipe.user || @current_user.admin? %>
+        <% if @current_user == @recipe.user || @recipe.user.admin? %>
             <div class="buttons">
                 <%= link_to 'Edit', edit_recipe_path(@recipe)%>
                 <%= link_to 'Delete', @recipe, :method => 'delete'%>
@@ -25,5 +25,24 @@
             <h3>Instructions:</h3>
             <p class="recipe-instructions"><%= @recipe.instructions %></p>
         </div>
+    </div>
+    <br>
+    <div class="comment-container">
+        <% @comment.each do |c| %>
+                <div class="comment">
+                    <div class="comment-header">
+                        <h3><%= c.user.username %></h3>
+                        <% if c.user.id == @recipe.user.id %>
+                            <div class="buttons-container">
+                                <%= link_to 'Edit', edit_comment_path(c), class: "btn" %>
+                                <%= link_to 'Delete', c, method: 'delete', class: "btn" %>
+                            </div>
+                        <% end %>
+                    </div>
+                    <p><%= c.content %></p>
+                </div>
+                    <br>
+            <%# end %>
+        <% end %>
     </div>
 </div>
