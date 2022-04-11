@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
 
   resources :users
-  resources :recipes
+  resources :recipes do
+    resources :comments, only: [:new, :edit, :create, :update]
+
+  end
   resources :comments
   
   get '/login' => 'session#new'

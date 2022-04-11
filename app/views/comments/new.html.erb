@@ -1,2 +1,10 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<h1>Write comment here</h1>
+
+<h3>please be polite.</h3>
+
+<%= form_for @comment do |f| %>
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "about-input-field" %>
+    <%= f.hidden_field :recipe_id, value: params[:recipe_id] %>
+    <%= f.submit 'Submit', class: 'btn' %>
+<% end %>

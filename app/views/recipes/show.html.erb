@@ -26,23 +26,25 @@
             <p class="recipe-instructions"><%= @recipe.instructions %></p>
         </div>
     </div>
+    <%= link_to 'Add Comment', new_comment_path, class: 'btn' %>
     <br>
     <div class="comment-container">
         <% @comment.each do |c| %>
-                <div class="comment">
-                    <div class="comment-header">
-                        <h3><%= c.user.username %></h3>
-                        <% if c.user.id == @recipe.user.id %>
-                            <div class="buttons-container">
-                                <%= link_to 'Edit', edit_comment_path(c), class: "btn" %>
-                                <%= link_to 'Delete', c, method: 'delete', class: "btn" %>
-                            </div>
-                        <% end %>
+                <% if c.recipe.id == @recipe.id %>
+                    <div class="comment">
+                        <div class="comment-header">
+                            <h3><%= c.user.username %></h3>
+                            <% if c.user.id == @current_user.id %>
+                                <div class="buttons-container">
+                                    <%= link_to 'Edit', edit_recipe_comment_path(c.id), class: "btn" %>
+                                    <%= link_to 'Delete', c, method: 'delete', class: "btn" %>
+                                </div>
+                            <% end %>
+                        </div>
+                        <p><%= c.content %></p>
                     </div>
-                    <p><%= c.content %></p>
-                </div>
                     <br>
-            <%# end %>
+            <% end %>
         <% end %>
     </div>
 </div>

@@ -1,27 +1,30 @@
 class CommentsController < ApplicationController
-  # check for owner implementation needed
   
  
   def new
     @comment = Comment.new
   end
   def create  
-      comment = Comment.new comment_params
+      comment = Comment.new
+      comment.content = params[:comment][:content]
       comment.user_id = @current_user.id
-      comment.recipe_id = params[:recipe_id]
+      comment.recipe_id = params[:comment][:recipe_id]
       comment.save 
-      redirect_to root_path
+
+      redirect_back(fallback_location: '/')
   end
-
-
 
   def edit
     @comment = Comment.find params[:id]
   end
   def update
-    comment = Comment.find params[:id]
-    comment.update comment_params
-    redirect_back(fallback_location: '/')
+    comment.find 
+    comment.content = params[:comment][:content]
+    comment.user_id = @current_user.id
+    comment.recipe_id = params[:comment][:recipe_id]
+    comment.update 
+
+    redirect_to recipe_path(params[:comment][:recipe_id])
   end
   def destroy
     comment = Comment.find params[:id]
