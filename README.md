@@ -1,7 +1,8 @@
 # COOKBOOK
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://jayleaton-cookbook.herokuapp.com/
+latest working link
+
 Project 1 for sei-52 is the second required project of the course we utilize what we have learnt
 to build a fully functioning CRUD webapp. I chose to build a cookbook to one day sell to instagram for millions of $ so when people post pictures of their food they can dirrectly link to my app that will give them a list of ingredients and directions how how to cook it. You can also find new recipes and like other people's recipes based on region and or category.
 
