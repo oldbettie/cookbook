@@ -7,6 +7,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find params[:id]
+    ingredients = @recipe.ingredients
+    @ingredients_as_arr = ingredients.split(', ', -1)
   end
 
   def new
