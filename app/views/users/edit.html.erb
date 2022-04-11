@@ -1,0 +1,9 @@
+<h1>Complete Your Profile</h1>
+
+<%= form_for @user do |f| %>
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+    <%= f.label :about %>
+    <%= f.text_field :about %>
+    <%= f.submit 'Complete Profile' %>
+<% end %>

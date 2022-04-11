@@ -7,6 +7,15 @@
 
 
 <div class="profile-grid">
-    <h1><%= @user.username %></h1>
-    <img src="<%= @user.image%>" alt="<%= @user.username %>">
+    <div class="grid-left">
+        <div class="profile-header">
+            <h1><%= @user.username %></h1>
+            <p class="timestamp">Member since: <%= @user.created_at.strftime '%m, %Y' %></p>
+        </div>
+        <p><%= @user.about %></p>
+    </div>
+    <div class="grid-right">
+        <%= image_tag @user.image, class: 'profile-image' if @user.image.present? %>
+    </div>
+
 </div>

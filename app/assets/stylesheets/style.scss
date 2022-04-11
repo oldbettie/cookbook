@@ -124,3 +124,27 @@ input[type="submit"] {
 .form-content {
 	border-radius: 20px;
 }
+// profile grid
+.profile-grid {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	background-color: rgb(59, 59, 59);
+	min-height: 90vh;
+}
+.grid-right {
+	display: flex;
+	justify-content: flex-end;
+}
+.profile-image {
+	margin: 20px;
+	max-height: 200px;
+	aspect-ratio: 1;
+	border-radius: 10px;
+}
+.profile-header {
+	display: flex;
+	justify-content: space-between;
+}
+.timestamp {
+	font-size: 13px;
+}
