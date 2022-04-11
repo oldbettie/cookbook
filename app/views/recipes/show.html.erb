@@ -3,8 +3,10 @@
             <h1><%= @recipe.name %></h1>
     
         <% if @current_user == @recipe.user %>
-            <%= link_to 'Edit', edit_recipe_path(@recipe)%>
-            <%= link_to 'Delete', @recipe, :method => 'delete'%>
+            <div class="buttons">
+                <%= link_to 'Edit', edit_recipe_path(@recipe)%>
+                <%= link_to 'Delete', @recipe, :method => 'delete'%>
+            </div>
         <% end %>
     </div>
     <img src="<%= @recipe.image %>" alt="<%= @recipe.name %>" class="img-show">

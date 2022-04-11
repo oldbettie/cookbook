@@ -52,6 +52,13 @@ a {
 	padding-bottom: 0px;
 	border-radius: 10px;
 }
+// recipe buttons
+.secondary-nav {
+	min-width: 75%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
 // main content container
 .container-main {
