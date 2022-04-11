@@ -21,6 +21,22 @@ puts ":total seeded recipes is #{ Recipe.count }"
 
 puts 'users and recipes'
 
+Comment.destroy_all
+c1 = Comment.create(content: 'Wow that looks great!')
+c2 = Comment.create(content: 'damn how good is that!')
+c3 = Comment.create(content: 'Ewww rabit food!')
+puts ":total seeded comments is #{ Comment.count }"
+
+
 u1.recipes << r1
 u2.recipes << r2
 u3.recipes << r3
+
+u1.comments << c1
+r1.comments << c1
+
+u2.comments << c2
+r2.comments << c2
+
+u3.comments << c3
+r3.comments << c3
