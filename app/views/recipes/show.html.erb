@@ -2,7 +2,7 @@
     <div class="secondary-nav">
             <h1><%= @recipe.name %></h1>
     
-        <% if @current_user == @recipe.user %>
+        <% if @current_user == @recipe.user || @current_user.admin? %>
             <div class="buttons">
                 <%= link_to 'Edit', edit_recipe_path(@recipe)%>
                 <%= link_to 'Delete', @recipe, :method => 'delete'%>
