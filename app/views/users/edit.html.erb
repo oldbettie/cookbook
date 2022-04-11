@@ -4,6 +4,7 @@
     <%= f.label :image %>
     <%= f.text_field :image %>
     <%= f.label :about %>
-    <%= f.text_field :about %>
-    <%= f.submit 'Complete Profile' %>
+    <%= f.text_area :about, class: "about-input-field" %>
+    <%= f.submit 'Complete Profile', class: 'btn' %>
 <% end %>
+

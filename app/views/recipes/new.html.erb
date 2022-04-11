@@ -4,18 +4,19 @@
         <%= r.label :name %>
         <%= r.text_field :name %>
         <%= r.label :ingredients %>
-        <%= r.text_field :ingredients %>
+        <%= r.text_area :ingredients, class: "about-input-field" %>
         <%= r.label :instructions %>
-        <%= r.text_field :instructions %>
+        <%= r.text_area :instructions, class: "about-input-field"  %>
         <%= r.label :image %>
         <%= r.url_field :image %>
         <%= r.label :video %>
         <%= r.url_field :video %>
         <%= r.label :category %>
-        <%= r.text_field :category %> <!-- TODO -->
+        <%= r.text_field :category %>
         <%= r.label :region %>
         <%= r.text_field :region %>
 
-        <%=r.submit%>
+        <%=r.submit 'submit', class: 'btn' %>
     <% end %>
+    <br>
 </div>

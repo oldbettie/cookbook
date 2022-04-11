@@ -42,3 +42,6 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:name, :ingredients, :instructions, :image, :video, :category, :region)
   end
 end
+
+
+
