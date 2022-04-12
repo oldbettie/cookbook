@@ -90,6 +90,7 @@ a {
 	padding: 20px;
 	max-width: 80%;
 	align-items: right;
+	justify-content: center;
 	border-radius: 40px;
 }
 .grid-left {
@@ -198,7 +199,10 @@ input[type="submit"] {
 }
 
 @media (max-width: 600px) {
-	a {
-		font-size: 35px;
+	body {
+		font-size: 200%;
+	}
+	.img-show {
+		width: 95%;
 	}
 }
