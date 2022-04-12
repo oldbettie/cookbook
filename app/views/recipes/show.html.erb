@@ -1,12 +1,15 @@
 <div class="show-content">
+<br>
     <div class="secondary-nav">
-            <h1><%= @recipe.name %></h1>
-    
-        <% if @current_user == @recipe.user || @recipe.user.admin? %>
-            <div class="buttons">
-                <%= link_to 'Edit', edit_recipe_path(@recipe)%>
-                <%= link_to 'Delete', @recipe, :method => 'delete'%>
-            </div>
+        <h1><%= @recipe.name %></h1>
+        <%= link_to @recipe.user.username, @recipe.user if @recipe.user != @current_user%>
+        <% if @current_user.present? %>
+            <% if @current_user == @recipe.user || @recipe.user.admin? %>
+                <div class="buttons">
+                    <%= link_to 'Edit', edit_recipe_path(@recipe)%>
+                    <%= link_to 'Delete', @recipe, :method => 'delete'%>
+                </div>
+            <% end %>
         <% end %>
     </div>
     <img src="<%= @recipe.image %>" alt="<%= @recipe.name %>" class="img-show">
