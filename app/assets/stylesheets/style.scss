@@ -200,8 +200,9 @@ input[type="submit"] {
 
 @media (max-width: 600px) {
 	body {
+		font-size: 200%;
 	}
 	.img-show {
-		width: 95%;
+		max-width: 95%;
 	}
 }
