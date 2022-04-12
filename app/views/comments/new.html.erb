@@ -2,9 +2,9 @@
 
 <h3>please be polite.</h3>
 
-<%= form_for @comment do |f| %>
+<%= form_for [@recipe, @comment] do |f| %>
     <%= f.label :content %>
     <%= f.text_area :content, class: "about-input-field" %>
-    <%= f.hidden_field :recipe_id, value: params[:recipe_id] %>
     <%= f.submit 'Submit', class: 'btn' %>
+
 <% end %>

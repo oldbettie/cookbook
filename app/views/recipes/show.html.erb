@@ -26,7 +26,7 @@
             <p class="recipe-instructions"><%= @recipe.instructions %></p>
         </div>
     </div>
-    <%= link_to 'Add Comment', new_comment_path, class: 'btn' %>
+    <%= link_to 'Add Comment', new_recipe_comment_path(@recipe), class: 'btn' %>
     <br>
     <div class="comment-container">
         <% @comment.each do |c| %>
@@ -34,11 +34,14 @@
                     <div class="comment">
                         <div class="comment-header">
                             <h3><%= c.user.username %></h3>
-                            <% if c.user.id == @current_user.id %>
-                                <div class="buttons-container">
-                                    <%= link_to 'Edit', edit_recipe_comment_path(c.id), class: "btn" %>
-                                    <%= link_to 'Delete', c, method: 'delete', class: "btn" %>
-                                </div>
+                            <% if @current_user.present? %>
+                                <% if @current_user.id == c.user.id %>
+                                    <div class="buttons-container">
+                                                <%#  edit recipe comment needs both ids assuming in the correct order %>
+                                        <%= link_to 'Edit', edit_recipe_comment_path(@recipe.id, c.id), class: "btn" %>
+                                        <%= link_to 'Delete', c, method: 'delete', class: "btn" %>
+                                    </div>
+                                <% end %>
                             <% end %>
                         </div>
                         <p><%= c.content %></p>

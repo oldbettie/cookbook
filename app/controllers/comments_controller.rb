@@ -1,30 +1,29 @@
 class CommentsController < ApplicationController
-  
  
   def new
-    @comment = Comment.new
+    @recipe = Recipe.find params[:recipe_id]
+    @comment = @recipe.comments.build
   end
   def create  
+
       comment = Comment.new
       comment.content = params[:comment][:content]
       comment.user_id = @current_user.id
-      comment.recipe_id = params[:comment][:recipe_id]
+      comment.recipe_id = params[:recipe_id]
       comment.save 
-
-      redirect_back(fallback_location: '/')
+      redirect_to recipe_path(params[:recipe_id])
   end
 
   def edit
+    @recipe = Recipe.find params[:recipe_id]
     @comment = Comment.find params[:id]
   end
   def update
-    comment.find 
+    comment = Comment.find params[:id]
     comment.content = params[:comment][:content]
-    comment.user_id = @current_user.id
-    comment.recipe_id = params[:comment][:recipe_id]
-    comment.update 
+    comment.save 
 
-    redirect_to recipe_path(params[:comment][:recipe_id])
+    redirect_to comment.recipe
   end
   def destroy
     comment = Comment.find params[:id]
