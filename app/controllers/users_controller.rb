@@ -28,12 +28,17 @@ class UsersController < ApplicationController
   end
   def update
     user = User.find params[:id]
-    user.update user_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      user.image = req["public_id"]
+    end
+    user.update_attributes user_params
+    user.save
     redirect_to user
   end
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :image, :about)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :about)
   end
 end

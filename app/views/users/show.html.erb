@@ -15,7 +15,7 @@
         <p><%= @user.about %></p>
     </div>
     <div class="grid-right">
-        <%= image_tag @user.image, class: 'profile-image' if @user.image.present? %>
+        <%= cl_image_tag @user.image, class: 'profile-image' if @user.image.present? %>
     </div>
 
 </div>

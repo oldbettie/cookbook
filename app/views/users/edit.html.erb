@@ -1,8 +1,8 @@
 <h1>Complete Your Profile</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for(@user, html: {multipart: true}) do |f| %>
     <%= f.label :image %>
-    <%= f.text_field :image %>
+    <%= f.cl_image_upload :image %>
     <%= f.label :about %>
     <%= f.text_area :about, class: "about-input-field" %>
     <%= f.submit 'Complete Profile', class: 'btn' %>
