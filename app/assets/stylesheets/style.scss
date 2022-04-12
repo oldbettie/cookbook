@@ -197,3 +197,9 @@ input[type="submit"] {
 .buttons-container {
 	display: flex;
 }
+
+@media (max-width: 600px) {
+	a {
+		font-size: 22px;
+	}
+}
