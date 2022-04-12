@@ -8,7 +8,7 @@ textarea {
 	resize: none;
 }
 body {
-	max-width: 950px;
+	max-width: 1400px;
 	margin: 0 auto;
 }
 // navigation ------
@@ -200,8 +200,6 @@ input[type="submit"] {
 
 @media (max-width: 600px) {
 	body {
-		font-size: 200%;
-		max-width: 95%;
 	}
 	.img-show {
 		width: 95%;
