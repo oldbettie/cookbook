@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     user.save
     redirect_to user
   end
-
+# shoot me
   private
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, :about)
