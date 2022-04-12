@@ -1,5 +1,11 @@
 
 <div class="show-content">
     <h1>COOKBOOK</h1>
-    <h3>Coming Soon!</h3>
+    <br>
+    <div class="feature">
+        <%= image_tag @recipe.image, class: 'homepage-img'%>
+        <div class="random">
+            <h1><%= link_to @recipe.name, recipe_path(@recipe), class: 'homepage-link'%></h1>
+        </div>
+    </div>
 </div>

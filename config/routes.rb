@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   root :to => 'pages#home'
+  resources :pages, only: :index do
+    :recipes
+  end
 
   resources :users
   resources :recipes do

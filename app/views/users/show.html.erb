@@ -12,7 +12,7 @@
             <h1><%= @user.username %></h1>
             <p class="timestamp">Member since: <%= @user.created_at.strftime '%m, %Y' %></p>
         </div>
-        <p><%= @user.about %></p>
+        <p class="user-bio"><%= @user.about %></p>
     </div>
     <div class="grid-right">
         <%= cl_image_tag @user.image, class: 'profile-image' if @user.image.present? %>
