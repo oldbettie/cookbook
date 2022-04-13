@@ -1,8 +1,11 @@
 class ApplicationController < ActionController::Base
     before_action :fetch_user
     before_action :set_theme
-
+    before_action :set_query
     
+    def set_query
+        @q = Recipe.ransack(params[:q])
+    end
     private
     def set_theme
         if params[:theme].present?

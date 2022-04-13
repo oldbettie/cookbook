@@ -51,6 +51,16 @@ p {
 	border-radius: 8px;
 	border: none;
 }
+.search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 75%;
+}
+.recipe_search {
+	display: flex;
+	margin-left: 30%;
+}
 // owner nav
 .owner-nav {
 	display: flex;
@@ -304,6 +314,9 @@ input[type="submit"] {
 	position: relative;
 	top: 25px;
 }
+button:hover {
+	cursor: pointer;
+}
 body.light {
 	.profile-grid,
 	.show-content,
@@ -341,6 +354,9 @@ body.light {
 	.btn:hover {
 		background-color: rgba(49, 49, 49, 0.713);
 		color: bisque;
+		cursor: pointer;
+	}
+	button:hover {
 		cursor: pointer;
 	}
 }

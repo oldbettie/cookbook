@@ -1,7 +1,9 @@
 
 <div class="show-content">
-    <h1>COOKBOOK</h1>
-    <br>
+    <div class="search">
+        <h1>COOKBOOK</h1>
+        <%= render 'search/form' %>
+    </div>
     <div class="feature">
         <%= image_tag @recipe.image, class: 'homepage-img'%>
         <div class="random">
@@ -9,3 +11,5 @@
         </div>
     </div>
 </div>
+
+
