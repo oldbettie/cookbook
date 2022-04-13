@@ -14,7 +14,7 @@
     </div>
     <img src="<%= @recipe.image %>" alt="<%= @recipe.name %>" class="img-show">
     <div class="likes-container">
-        <h2 class="likes-counter"><span class="material-icons-outlined">thumb_up  </span> <%= @recipe.likes.count %></h2>
+        <h2 class="likes-counter"><span class="material-icons-outlined thumb">thumb_up </span></h2><h2 class="counter-number"> <%= @recipe.likes.count %></h2>
         <% like = @current_user.likes.find_by(recipe: @recipe) %>
         <% if like.nil? %>
             <%= button_to 'Like', likes_path, params: { like: { recipe_id: @recipe.id }}, class: 'btn like-btn', method: :post %>

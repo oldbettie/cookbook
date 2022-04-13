@@ -157,6 +157,10 @@ a:hover {
 	display: grid;
 	grid-template-columns: 2fr 4fr;
 }
+.lower-left,
+.lower-right {
+	margin-top: -15px;
+}
 .recipe-list,
 .recipe-instructions {
 	margin-left: 80px;
@@ -168,6 +172,8 @@ a:hover {
 	display: flex;
 	width: 75%;
 	justify-content: flex-end;
+	padding-bottom: 0px;
+	height: 50px;
 }
 .like-btn {
 	background-color: bisque;
@@ -176,9 +182,16 @@ a:hover {
 }
 .like-btn:hover {
 	color: bisque;
+	cursor: pointer;
 }
 .likes-counter {
-	padding-right: 25px;
+	margin-top: 5px;
+	padding-right: 15px;
+}
+.counter-number {
+	display: flex;
+	align-items: center;
+	padding-right: 45px;
 }
 //  form ---
 input {
