@@ -13,9 +13,18 @@
         <% end %>
     </div>
     <img src="<%= @recipe.image %>" alt="<%= @recipe.name %>" class="img-show">
+    <div class="likes-container">
+        <h2 class="likes-counter"><span class="material-icons-outlined">thumb_up  </span> <%= @recipe.likes.count %></h2>
+        <% like = @current_user.likes.find_by(recipe: @recipe) %>
+        <% if like.nil? %>
+            <%= button_to 'Like', likes_path, params: { like: { recipe_id: @recipe.id }}, class: 'btn like-btn', method: :post %>
+        <% else %>
+            <%= button_to 'Unlike', like_path(like), class: 'btn like-btn', method: :delete %>
+
+        <% end %>
+    </div>
     <div class="lower-grid">
         <div class="lower-left">
-            <br>
             <h3>Ingredients:</h3>
             <ul class="recipe-list">
                 <% @ingredients_as_arr.each do |i| %>
@@ -24,7 +33,6 @@
             </ul>
         </div>
         <div class="lower-right">
-            <br>
             <h3>Instructions:</h3>
             <p class="recipe-instructions"><%= @recipe.instructions %></p>
         </div>
@@ -48,6 +56,7 @@
                             <% end %>
                         </div>
                         <p><%= c.content %></p>
+                        <p class="timestamp comment-timestamp"><%= c.created_at.strftime '%I:%M %p %A, %B %e, %Y' %></p>
                     </div>
                     <br>
             <% end %>

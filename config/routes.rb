@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     :recipes
   end
 
+  resources :likes, only: [:create, :destroy]
+
   resources :users
   resources :recipes do
     resources :comments, only: [:new, :edit, :create, :update]

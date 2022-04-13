@@ -164,7 +164,22 @@ a:hover {
 .btn:hover {
 	background-color: rgba(49, 49, 49, 0.713);
 }
-
+.likes-container {
+	display: flex;
+	width: 75%;
+	justify-content: flex-end;
+}
+.like-btn {
+	background-color: bisque;
+	color: rgba(49, 49, 49, 0.713);
+	padding: 8px 8px 4px 8px;
+}
+.like-btn:hover {
+	color: bisque;
+}
+.likes-counter {
+	padding-right: 25px;
+}
 //  form ---
 input {
 	width: 97%;
@@ -238,6 +253,15 @@ input[type="submit"] {
 .recipe-content:hover {
 	transform: scale(1.03);
 	transition: 0.5s;
+}
+.comment-timestamp {
+	text-align: right;
+	position: relative;
+	top: 25px;
+}
+.material-icons-outlined {
+	font-family: "Material Icons";
+	font-size: 35px;
 }
 
 // @media (max-width: 600px) {
