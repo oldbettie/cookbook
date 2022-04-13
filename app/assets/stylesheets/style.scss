@@ -4,6 +4,10 @@
 	padding: 0;
 	font-family: "Anek Odia", sans-serif;
 }
+.material-icons-outlined {
+	font-family: "Material Icons";
+	font-size: 35px;
+}
 textarea {
 	resize: none;
 }
@@ -222,8 +226,15 @@ input[type="submit"] {
 .profile-grid {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
+	grid-template-rows: auto;
 	background-color: rgb(59, 59, 59);
 	min-height: 90vh;
+}
+.user-recipes {
+	width: 75%;
+	margin-left: 12.5%;
+	grid-column-start: 1;
+	grid-column-end: 3;
 }
 .grid-right {
 	display: flex;
@@ -271,10 +282,6 @@ input[type="submit"] {
 	text-align: right;
 	position: relative;
 	top: 25px;
-}
-.material-icons-outlined {
-	font-family: "Material Icons";
-	font-size: 35px;
 }
 
 // @media (max-width: 600px) {

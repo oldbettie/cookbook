@@ -17,5 +17,20 @@
     <div class="grid-right">
         <%= cl_image_tag @user.image, class: 'profile-image' if @user.image.present? %>
     </div>
+    <br>
+    <div class="user-recipes">
+            <% @user.recipes.each do |r| %>
+                <div class="recipe-content">
+                    <div class="grid-left">
+                        <div class="recipe-header">
+                            <h3 class="recipe-name"><%= link_to r.name, r %></h3>
+                            <h3 class="recipe-owner">Created by: <%= link_to r.user.username, user_path(r.user)%></h3>
+                        </div>
+                        <p class="desc-content"><%= r.instructions %> </p>
+                    </div>
+                    <img src="<%=r.image%>" alt="<%=r.name%>" class="index-img">
+                </div>
+            <% end %>
+    </div>
 
 </div>
