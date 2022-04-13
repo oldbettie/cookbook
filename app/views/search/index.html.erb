@@ -1,6 +1,8 @@
-<h1>Search <%= pluralize(@recipes.count, "Result") %></h1>
-
-<%= render 'search/form' %>
+<div class="show-content">
+<div class="search">
+    <h2>Search <%= pluralize(@recipes.count, "Result") %></h2>
+    <%= render 'search/form' %>
+</div>
 <br>
 <% @recipes.each do |r| %>
     <div class="recipe-content">
@@ -14,3 +16,4 @@
         <img src="<%=r.image%>" alt="<%=r.name%>" class="index-img">
     </div>
 <% end %>
+</div>

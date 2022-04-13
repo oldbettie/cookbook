@@ -4,11 +4,11 @@
         <h1>COOKBOOK</h1>
         <%= render 'search/form' %>
     </div>
+    <br>
     <div class="feature">
-        <%= image_tag @recipe.image, class: 'homepage-img'%>
-        <div class="random">
-            <h1><%= link_to @recipe.name, recipe_path(@recipe), class: 'homepage-link'%></h1>
-        </div>
+        <%= link_to recipe_path(@recipe) do %>
+            <%= image_tag @recipe.image, class: 'homepage-img'%>
+        <% end %>
     </div>
 </div>
 
