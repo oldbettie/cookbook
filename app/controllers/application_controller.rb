@@ -1,7 +1,18 @@
 class ApplicationController < ActionController::Base
     before_action :fetch_user
+    before_action :set_theme
 
+    
     private
+    def set_theme
+        if params[:theme].present?
+            theme = params[:theme].to_sym
+            # session[:theme] = theme
+            cookies[:theme] = theme
+            redirect_to(request.referrer || root_path)
+        end
+    end
+
     def fetch_user
         @current_user = User.find_by id: session[:user_id] if session[:user_id].present?
         session[:user_id] = nil unless @current_user.present?

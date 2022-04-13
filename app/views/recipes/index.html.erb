@@ -4,8 +4,8 @@
     <div class="recipe-content">
         <div class="grid-left">
             <div class="recipe-header">
-                <h3 class="recipe-name"><%= link_to r.name, r %></h3>
-                <h3 class="recipe-owner">Created by: <%= link_to r.user.username, user_path(r.user)%></h3>
+                <h3><%= link_to r.name, r, class: 'btn' %></h3>
+                <h3 class="recipe-owner">Created by: <%= link_to r.user.username, user_path(r.user), class: 'btn' %></h3>
             </div>
             <p class="desc-content"><%= r.instructions %> </p>
         </div>

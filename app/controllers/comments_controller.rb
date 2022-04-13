@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
     @comment = @recipe.comments.build
   end
   def create  
-
       comment = Comment.new
       comment.content = params[:comment][:content]
       comment.user_id = @current_user.id

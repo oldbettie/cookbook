@@ -11,7 +11,7 @@
 textarea {
 	resize: none;
 }
-body {
+body.dark {
 	max-width: 950px;
 	margin: 0 auto;
 	background-color: rgb(59, 59, 59);
@@ -29,8 +29,6 @@ p {
 	height: 50px;
 	width: 100%;
 	justify-content: space-between;
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
 }
 
 .nav-btns,
@@ -45,7 +43,7 @@ p {
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	background-color: rgba(14, 14, 14, 0.845);
+	background-color: rgba(33, 32, 32, 0.845);
 	color: bisque;
 	padding: 8px;
 	padding-bottom: 4px;
@@ -128,6 +126,12 @@ a {
 .recipe-header {
 	display: flex;
 	justify-content: space-between;
+}
+.recipe-owner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
 }
 a:hover {
 	background-color: rgb(178, 159, 136);
@@ -300,12 +304,43 @@ input[type="submit"] {
 	position: relative;
 	top: 25px;
 }
-
-// @media (max-width: 600px) {
-// 	body {
-// 		font-size: 200%;
-// 	}
-// 	a {
-// 		max-width: 95%;
-// 	}
-// }
+body.light {
+	.profile-grid,
+	.show-content,
+	.comment,
+	.comment-container,
+	.recipe-content,
+	.grid-left {
+		background-color: aliceblue;
+		color: rgb(59, 59, 59);
+	}
+	h1,
+	h2,
+	h3,
+	p,
+	.user-bio,
+	.desc-content {
+		color: rgb(59, 59, 59);
+	}
+	p.desc-content {
+		color: rgb(59, 59, 59);
+	}
+	max-width: 950px;
+	margin: 0 auto;
+	background-color: aliceblue;
+	color: black;
+	a,
+	.btn {
+		color: rgb(59, 59, 59);
+		background-color: bisque;
+	}
+	div.navigation,
+	div.owner-nav {
+		background-color: aliceblue;
+	}
+	.btn:hover {
+		background-color: rgba(49, 49, 49, 0.713);
+		color: bisque;
+		cursor: pointer;
+	}
+}

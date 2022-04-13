@@ -14,7 +14,7 @@
     <%= cloudinary_js_config %>
   </head>
 
-  <body>
+  <body class="<%= cookies[:theme] %>">
     <div class="navigation">
       <div class="nav-btns">
         <%= link_to 'COOKBOOK', root_path, class: 'btn' %>
@@ -24,6 +24,11 @@
         <% end %>
       </div>
       <div class="session-btns">
+          <% if cookies[:theme] == "light" %>
+            <%= link_to "Dark", root_path(theme: "dark"), class: 'btn' %>
+          <% else %>
+            <%= link_to "Light", root_path(theme: "light"), class: 'btn' %>
+          <% end %>
         <% if @current_user.present? %>
           <% if @current_user.admin? %>
           <%# TODO add link instead of welcome page to edit profile %>
