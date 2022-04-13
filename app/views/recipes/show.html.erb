@@ -6,8 +6,8 @@
         <% if @current_user.present? %>
             <% if @current_user == @recipe.user || @recipe.user.admin? %>
                 <div class="buttons">
-                    <%= link_to 'Edit', edit_recipe_path(@recipe)%>
-                    <%= link_to 'Delete', @recipe, :method => 'delete'%>
+                    <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn"%>
+                    <%= link_to 'Delete', @recipe, :method => 'delete', class: "btn"%>
                 </div>
             <% end %>
         <% end %>
@@ -17,9 +17,9 @@
         <h2 class="likes-counter"><span class="material-icons-outlined thumb">thumb_up </span></h2><h2 class="counter-number"> <%= @recipe.likes.count %></h2>
         <% like = @current_user.likes.find_by(recipe: @recipe) %>
         <% if like.nil? %>
-            <%= button_to 'Like', likes_path, params: { like: { recipe_id: @recipe.id }}, class: 'btn like-btn', method: :post %>
+            <%= button_to 'Like', likes_path, params: { like: { recipe_id: @recipe.id }}, class: 'btn', method: :post %>
         <% else %>
-            <%= button_to 'Unlike', like_path(like), class: 'btn like-btn', method: :delete %>
+            <%= button_to 'Unlike', like_path(like), class: 'btn', method: :delete %>
 
         <% end %>
     </div>

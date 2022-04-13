@@ -2,20 +2,12 @@
 
 <div class="form-content">
     <%= form_for @recipe do |r| %>
-        <%= r.label :name %>
-        <%= r.text_field :name %>
-        <%= r.label :ingredients %>
-        <%= r.text_area :ingredients, class: "about-input-field" %>
-        <%= r.label :instructions %>
-        <%= r.text_area :instructions, class: "about-input-field"  %>
-        <%= r.label :image %>
-        <%= r.url_field :image %>
-        <%= r.label :video %>
-        <%= r.url_field :video %>
-        <%= r.label :category %>
-        <%= r.text_field :category %> <!-- TODO -->
-        <%= r.label :region %>
-        <%= r.text_field :region %>
+        <%= r.text_field :name, placeholder: 'Recipe Name' %>
+        <%= r.text_area :ingredients, placeholder: "Recipe Ingredients seperated by ,", class: "about-input-field" %>
+        <%= r.text_area :instructions, placeholder: 'Cooking instructions', class: "about-input-field"  %>
+        <%= r.url_field :image, placeholder: 'Image url link (must link to an already hosted image)' %>
+        <%= r.text_field :category, placeholder: 'Meal category ie- Breakfast' %>
+        <%= r.text_field :region, placeholder: 'Meal origin ie- Mexican' %>
 
         <%=r.submit 'submit', class: 'btn' %>
     <% end %>

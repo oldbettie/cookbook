@@ -14,6 +14,13 @@ textarea {
 body {
 	max-width: 950px;
 	margin: 0 auto;
+	background-color: rgb(59, 59, 59);
+}
+h1,
+h2,
+h3,
+p {
+	color: bisque;
 }
 // navigation ------
 .navigation {
@@ -22,6 +29,8 @@ body {
 	height: 50px;
 	width: 100%;
 	justify-content: space-between;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .nav-btns,
@@ -169,6 +178,9 @@ a:hover {
 .recipe-instructions {
 	margin-left: 80px;
 }
+.buttons {
+	display: flex;
+}
 .btn:hover {
 	background-color: rgba(49, 49, 49, 0.713);
 }
@@ -258,15 +270,20 @@ input[type="submit"] {
 }
 // comment
 .comment-container {
+	background-color: rgb(59, 59, 59);
 	width: 75%;
 }
+
 .comment {
 	min-height: 100px;
 	background-color: bisque;
 	border-radius: 8px;
-	color: rgba(14, 14, 14, 0.845);
+	background-color: rgb(59, 59, 59);
+	border: 1px solid bisque;
 	padding: 8px;
+	box-shadow: 5px 5px 10px 3px rgba(6, 6, 6, 0.576);
 }
+
 .comment-header {
 	display: flex;
 	justify-content: space-between;
