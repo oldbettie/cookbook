@@ -44,7 +44,7 @@
     <% end %>
     <br>
     <div class="comment-container">
-        <% @comment.each do |c| %>
+        <% @comment.order(:created_at).reverse_order.each do |c| %>
                 <% if c.recipe.id == @recipe.id %>
                     <div class="comment">
                         <div class="comment-header">
@@ -52,7 +52,6 @@
                             <% if @current_user.present? %>
                                 <% if @current_user.id == c.user.id %>
                                     <div class="buttons-container">
-                                                <%#  edit recipe comment needs both ids assuming in the correct order %>
                                         <%= link_to 'Edit', edit_recipe_comment_path(@recipe.id, c.id), class: "btn" %>
                                         <%= link_to 'Delete', c, method: 'delete', class: "btn" %>
                                     </div>

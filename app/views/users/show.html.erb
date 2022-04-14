@@ -29,7 +29,7 @@
     </div>
     <br>
     <div class="user-recipes">
-            <% @user.recipes.each do |r| %>
+            <% @user.recipes.order(:created_at).reverse_order.each do |r| %>
                 <div class="recipe-content">
                     <div class="grid-left">
                         <div class="recipe-header">

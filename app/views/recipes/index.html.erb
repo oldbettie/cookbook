@@ -1,6 +1,6 @@
 <h1>All recipes</h1>
 
-<% @recipes.each do |r| %>
+<% @recipes.order(:created_at).reverse_order.each do |r| %>
     <div class="recipe-content">
         <div class="grid-left">
             <div class="recipe-header">

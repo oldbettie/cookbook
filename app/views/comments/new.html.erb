@@ -3,8 +3,7 @@
 <h3>please be polite.</h3>
 
 <%= form_for [@recipe, @comment] do |f| %>
-    <%= f.label :content %>
-    <%= f.text_area :content, class: "about-input-field" %>
+    <%= f.text_area :content, placeholder: 'comment goes here', class: "about-input-field" %>
     <%= f.submit 'Submit', class: 'btn' %>
 
 <% end %>
