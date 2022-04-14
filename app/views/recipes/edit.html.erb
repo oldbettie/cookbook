@@ -1,15 +1,3 @@
 <h1><%= @recipe.name %></h1>
 
-<div class="form-content">
-    <%= form_for @recipe do |r| %>
-        <%= r.text_field :name, placeholder: 'Recipe Name' %>
-        <%= r.text_area :ingredients, placeholder: "Recipe Ingredients seperated by ,", class: "about-input-field" %>
-        <%= r.text_area :instructions, placeholder: 'Meal description for homepage and cooking instructions', class: "about-input-field"  %>
-        <%= r.url_field :image, placeholder: 'Image url link (must link to an already hosted image)' %>
-        <%= r.text_field :category, placeholder: 'Meal category ie- Breakfast' %>
-        <%= r.text_field :region, placeholder: 'Meal origin ie- Mexican' %>
-
-        <%=r.submit 'submit', class: 'btn' %>
-    <% end %>
-    <br>
-</div>
+<%= render 'recipes/form' %>
