@@ -7,7 +7,7 @@
             <% if @current_user.present? %>
                 <% if @current_user == @recipe.user || @current_user.admin? %>
                     <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn"%>
-                    <%= link_to 'Delete', @recipe, :method => 'delete', class: "btn"%>
+                    <%= link_to 'Delete', @recipe, :method => 'delete', data: {confirm: 'are you sure you wish to delete recipe?'}, class: "btn"%>
                 <% end %>
             <% end %>
         </div>

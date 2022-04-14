@@ -36,6 +36,12 @@ class UsersController < ApplicationController
     user.save
     redirect_to user
   end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to root_path
+  end
 # shoot me please
   private
   def user_params

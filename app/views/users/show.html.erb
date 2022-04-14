@@ -10,7 +10,7 @@
                 <%= link_to 'Admin', users_path, class: 'btn'  %>
             <% end %>
             <%= link_to 'Edit', edit_user_path(@user), class: 'btn sesions btns' %>
-            <%= link_to 'Delete', root_path, method: 'delete', data: {confirm: 'are you sure you wish to leave us?'}, class: 'btn session-btns' %>
+            <%= link_to 'Delete', @user, method: 'delete', data: {confirm: 'are you sure you wish to leave us?'}, class: 'btn session-btns' %>
         <% end %>
     </div>
 <% end %>
