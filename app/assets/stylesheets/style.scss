@@ -422,4 +422,14 @@ body.light {
 	.secondary-nav {
 		flex-direction: column;
 	}
+	.img-show {
+		margin: 10px 0px;
+	}
+	.show-content > * {
+		width: 95%;
+	}
+	.show-content > .btn {
+		width: fit-content;
+		margin: 0;
+	}
 }
