@@ -4,6 +4,7 @@
         <h1><%= @recipe.name %></h1>
         <div class="buttons">
             <%= link_to @recipe.user.username, @recipe.user, class: 'btn' if @recipe.user != @current_user %>
+            <%# if logged in and own account or an admin display edit and delete recipe buttons %>
             <% if @current_user.present? %>
                 <% if @current_user == @recipe.user || @current_user.admin? %>
                     <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn"%>
@@ -14,7 +15,9 @@
     </div>
     <img src="<%= @recipe.image %>" alt="<%= @recipe.name %>" class="img-show">
     <div class="likes-container">
+        <%# google font icon classes and span for thumbs up %>
         <h2 class="likes-counter"><span class="material-icons-outlined thumb">thumb_up </span></h2><h2 class="counter-number"> <%= @recipe.likes.count %></h2>
+        <%# like button functionality %>
         <% if @current_user.present? %>
         <% like = @current_user.likes.find_by(recipe: @recipe) %>
             <% if like.nil? %>
@@ -29,8 +32,9 @@
         <div class="lower-left">
             <h3>Ingredients:</h3>
             <ul class="recipe-list">
+                <%# converts ingredients array to dot points %>
                 <% @ingredients_as_arr.each do |i| %>
-                    <li><%= i%></li>
+                    <li><%= i %></li>
                 <% end %>
             </ul>
         </div>
@@ -39,6 +43,7 @@
             <p class="recipe-instructions"><%= @recipe.instructions %></p>
         </div>
     </div>
+    <%# if logged in show comment button %>
     <% if @current_user.present? %>
         <%= link_to 'Add Comment', new_recipe_comment_path(@recipe), class: 'btn' %>
     <% end %>
@@ -50,6 +55,7 @@
                         <div class="comment-header">
                             <h3><%= c.user.username %></h3>
                             <% if @current_user.present? %>
+                                <%# if you made comment show edit and delete buttons TODO admin delete %>
                                 <% if @current_user.id == c.user.id %>
                                     <div class="buttons-container">
                                         <%= link_to 'Edit', edit_recipe_comment_path(@recipe.id, c.id), class: "btn" %>

@@ -33,9 +33,9 @@ Further mobile optimizations
 
 # KOOL FEATURES
 
-light/dark mode toggle in account sub heading
-like button
-search feature
+light/dark mode toggle in account sub heading.
+like button.
+search feature.
 
 # Bugs
 

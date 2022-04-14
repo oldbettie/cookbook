@@ -4,7 +4,6 @@
     <title>Cookbook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,22 +12,25 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= cloudinary_js_config %>
   </head>
-
+<%# cookies theme saves theme preference to browser for next use %>
   <body class="<%= cookies[:theme] %>">
     <div class="navigation">
       <div class="nav-btns">
         <%= link_to 'COOKBOOK', root_path, class: 'btn' %>
         <%= link_to 'All Recipes', recipes_path, class: 'btn' %>
+        <%# only allows new recipes to be made by people with accounts %>
         <% if @current_user.present? %>
           <%= link_to 'New Recipe', new_recipe_path, class: 'btn' %>
         <% end %>
       </div>
       <div class="session-btns">
+        <%# only access to account settings and sign out if you are logged in %>
         <% if @current_user.present? %>
           <%= link_to @current_user.username, @current_user, class: 'btn' %>
 
           <%= link_to 'Sign out', login_path, method: 'delete', class: 'btn'  %>
         <% else %>
+          <%# only shows if logged out %>
           <%= link_to 'Login', login_path, class: 'btn'  %>
           <%= link_to 'Sign up', new_user_path, class: 'btn'  %>
         <% end %>

@@ -1,11 +1,14 @@
+<%# this subheading only shows for when you are logged in and on your profile page this allows you to change some settings ect %>
 <% if @current_user.present? %>
     <% if @current_user == @user %>
         <div class="owner-nav nav-btns">
+            <%# light dark theme using cookies for memory %>
             <% if cookies[:theme] == "light" %>
                 <%= link_to "Dark", root_path(theme: "dark"), class: 'btn' %>
             <% else %>
                 <%= link_to "Light", root_path(theme: "light"), class: 'btn' %>
             <% end %>
+            <%# gives access to admin page if you are admin %>
             <% if @current_user.admin? %>
                 <%= link_to 'Admin', users_path, class: 'btn'  %>
             <% end %>
@@ -29,21 +32,20 @@
     </div>
     <br>
     <div class="user-recipes">
-            <% @user.recipes.order(:created_at).reverse_order.each do |r| %>
-                <div class="recipe-content">
-                    <div class="grid-left">
-                        <div class="recipe-header">
-                            <h3 class="recipe-name"><%= link_to r.name, r, class: 'btn' %></h3>
-                           
-                        </div>
-                        <p class="desc-content"><%= r.instructions %> </p>
+        <%# displays recipes most recent at top %>
+        <% @user.recipes.order(:created_at).reverse_order.each do |r| %>
+            <div class="recipe-content">
+                <div class="grid-left">
+                    <div class="recipe-header">
+                        <h3 class="recipe-name"><%= link_to r.name, r, class: 'btn' %></h3>
                     </div>
-                    <div class="right">
-                        <img src="<%=r.image%>" alt="<%=r.name%>" class="index-img">
-                        <p class="timestamp recipe-timestamp"><%= r.created_at.strftime '%I:%M %p %A, %B %e, %Y' %></p>
-                    </div>
+                    <p class="desc-content"><%= r.instructions %> </p>
                 </div>
-            <% end %>
+                <div class="right">
+                    <img src="<%=r.image%>" alt="<%=r.name%>" class="index-img">
+                    <p class="timestamp recipe-timestamp"><%= r.created_at.strftime '%I:%M %p %A, %B %e, %Y' %></p>
+                </div>
+            </div>
+        <% end %>
     </div>
-
 </div>

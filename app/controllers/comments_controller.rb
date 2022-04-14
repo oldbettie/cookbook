@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
- 
+  #-----new comment-----
   def new
     @recipe = Recipe.find params[:recipe_id]
     @comment = @recipe.comments.build
@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
       redirect_to recipe_path(params[:recipe_id])
   end
 
+  #------edit comment-----
   def edit
     @recipe = Recipe.find params[:recipe_id]
     @comment = Comment.find params[:id]
@@ -21,9 +22,10 @@ class CommentsController < ApplicationController
     comment = Comment.find params[:id]
     comment.content = params[:comment][:content]
     comment.save 
-
     redirect_to comment.recipe
   end
+
+  #-----delete comment------
   def destroy
     comment = Comment.find params[:id]
     comment.destroy
