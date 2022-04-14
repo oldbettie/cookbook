@@ -257,14 +257,14 @@ input[type="submit"] {
 	min-height: 90vh;
 }
 .user-recipes {
-	width: 75%;
-	margin-left: 12.5%;
+	width: 100%;
 	grid-column-start: 1;
 	grid-column-end: 3;
 }
 .grid-right {
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
 }
 .profile-image {
 	margin: 20px;
