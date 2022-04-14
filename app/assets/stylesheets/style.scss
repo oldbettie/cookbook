@@ -143,6 +143,14 @@ a:hover {
 	justify-content: center;
 	border-radius: 40px;
 }
+.recipe-timestamp {
+	text-align: center;
+	position: relative;
+	top: -25px;
+}
+.right {
+	margin-bottom: -20px;
+}
 .grid-left {
 	color: bisque;
 	margin: 20px 0px 0px 20px;
@@ -431,5 +439,8 @@ body.light {
 	.show-content > .btn {
 		width: fit-content;
 		margin: 0;
+	}
+	.recipe-timestamp {
+		font-size: 10px;
 	}
 }

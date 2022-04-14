@@ -9,6 +9,9 @@
             </div>
             <p class="desc-content"><%= r.instructions %> </p>
         </div>
-        <img src="<%=r.image%>" alt="<%=r.name%>" class="index-img">
+        <div class="right">
+            <img src="<%=r.image%>" alt="<%=r.name%>" class="index-img">
+            <p class="timestamp recipe-timestamp"><%= r.created_at.strftime '%I:%M %p %A, %B %e, %Y' %></p>
+        </div>
     </div>
 <% end %>
