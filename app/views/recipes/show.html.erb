@@ -24,7 +24,6 @@
                 <%= button_to 'Like', likes_path, params: { like: { recipe_id: @recipe.id }}, class: 'btn', method: :post %>
             <% else %>
                 <%= button_to 'Unlike', like_path(like), class: 'btn', method: :delete %>
-
             <% end %>
         <% end %>
     </div>
