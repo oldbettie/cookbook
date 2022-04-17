@@ -27,7 +27,6 @@
         <%# only access to account settings and sign out if you are logged in %>
         <% if @current_user.present? %>
           <%= link_to @current_user.username, @current_user, class: 'btn' %>
-
           <%= link_to 'Sign out', login_path, method: 'delete', class: 'btn'  %>
         <% else %>
           <%# only shows if logged out %>
