@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
         session[:user_id] = nil unless @current_user.present?
     end
 
-    # -----backend to only allow buttons to work for set users-----
+    # -----backend to only allow buttons/url to work for set users-----
     # current user
     def check_for_login
         redirect_to login_path unless @current_user.present?

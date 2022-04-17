@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
 
   #-----create recipe-----
   def new
+    check_for_login
     @recipe = Recipe.new
   end
   def create
