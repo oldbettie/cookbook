@@ -2,8 +2,8 @@
 
 # Login
 
-username: patrick
-password: chicken
+-username: patrick
+-password: chicken
 or create an account and use the app as you please.
 
 # About
@@ -33,12 +33,12 @@ Further mobile optimizations
 
 # KOOL FEATURES
 
-light/dark mode toggle in account sub heading.
-like button.
-search feature.
+-light/dark mode toggle in account sub heading.
+-like button.
+-search feature.
 
 # Bugs
 
 may still be some bugs if you find any let me know and il check it out.
 
-im aware of the mobile poor optimizations.
+im aware of the poor mobile optimizations.
