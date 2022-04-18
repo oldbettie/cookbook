@@ -2,14 +2,14 @@
 
 # Login
 
--username: patrick
--password: chicken
-or create an account and use the app as you please.
+-   username: patrick.
+-   password: chicken.
+-   or create an account and use the app as you please.
 
 # About
 
-Project Cookbook for sei-52 is the second project of the course we utilize what we have learnt
-to build a fully functioning CRUD web application. I chose to build a cookbook to one day sell to instagram for millions of dollers. So when people want to post pictures of their food they can dirrectly post to my app that will give them a list of ingredients and directions how to cook it amongst other things. You can also find recipes to try yourself.
+Project Cookbook for sei-52 is the second project of the course we utilize what we have learnt to build a fully functioning CRUD web application.
+I chose to build a cookbook to one day sell to instagram for millions of dollers. When people want to post pictures of their food they can dirrectly post to my app that will give them a list of ingredients and directions on how to cook it amongst other useful information. You can also find recipes to try yourself.
 
 This will stop food showing up on my instagram making me hungry all the time.
 
@@ -22,7 +22,7 @@ some mobile optimization has been done but it varies from screen size i did this
 
 # Tools and Implementation
 
-This project was built with ruby on rails as the main tool. but also utizes SCSS, HTML.ERB, as well as a few handy gems Cloudinary and specifically Ransack for search functionality. all css was done manually.
+This project was built with ruby on rails as the main tool. but also utizes SCSS, HTML.ERB, as well as a few handy gems Cloudinary for image uploads and Ransack for search functionality. all css was done manually.
 
 -   Ruby on Rails 5.2.7
 
@@ -33,9 +33,9 @@ Further mobile optimizations
 
 # KOOL FEATURES
 
--light/dark mode toggle in account sub heading.
--like button.
--search feature.
+-   light/dark mode toggle in account sub heading.
+-   like button.
+-   search feature.
 
 # Bugs
 
